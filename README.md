@@ -120,7 +120,7 @@ Access the application here: [NER and POS Tagging App](https://huggingface.co/sp
 
 ## Contributing
 
-Contributions are welcomed! Here’s how you can contribute:
+Contributions are welcomed!!!! Here’s how you can contribute:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
