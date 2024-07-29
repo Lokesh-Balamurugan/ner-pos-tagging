@@ -58,25 +58,35 @@ This project undertakes a detailed comparison of six advanced machine learning m
 4. **Feature Extraction**:
    - Extracted word-level and contextual features necessary for model training.
 
-### Sequence Tagging Models
+### Preprocessing for Different Methods
 
-1. **Conditional Random Field (CRF)**:
-   - Utilizes dependencies between adjacent labels for sequence labeling.
+Different models require specific preprocessing steps to ensure optimal performance:
 
-2. **Bidirectional LSTM (BiLSTM)**:
-   - Captures contextual information by processing sequences in both directions.
+1. **CRF**: utilizes dependencies between adjacent labels for sequence labeling
+   - Features include word tokens, POS tags, and other contextual information.
+   - Input format is a structured feature dictionary for each word.
 
-3. **BiLSTM+CRF**:
-   - Combines BiLSTM and CRF for enhanced sequence tagging.
+2. **BiLSTM**: captures contextual information by processing sequences in both directions
+   - Tokenized sentences are converted to integer indices.
+   - Padding ensures uniform sequence length across batches.
+   - Embedding layers are used to convert tokens to dense vectors.
 
-4. **Convolutional Neural Network (CNN)**:
-   - Leverages feature extraction capabilities for sequence tagging.
+3. **BiLSTM+CRF**: combines BiLSTM and CRF for enhanced sequence tagging
+   - Combines the preprocessing steps of BiLSTM and CRF.
+   - Tokenized sequences with features structured for CRF layer integration.
 
-5. **Bidirectional Encoder Representations from Transformers (BERT)**:
-   - Uses an attention mechanism for contextual relation learning.
+4. **CNN**: leverages feature extraction capabilities for sequence tagging
+   - Tokenized sentences are converted to integer indices.
+   - Padding and embedding layers are used to ensure consistent input size and dense vector representation.
 
-6. **XLNet**:
-   - Extends the Transformer-XL model with an autoregressive approach for bidirectional context learning.
+5. **BERT**: employs an attention mechanism for contextual relation learning
+   - Sentences are tokenized using BERT’s tokenizer, including special tokens ([CLS], [SEP]).
+   - Attention masks are created to differentiate between padding and actual tokens.
+   - Tokenized inputs are converted to IDs and passed through BERT’s embedding layer.
+
+6. **XLNet**: extends the Transformer-XL model with an autoregressive approach for bidirectional context learning
+   - Similar preprocessing steps as BERT, with additional attention to autoregressive input formatting.
+   - Tokenization, attention masks, and positional embeddings are prepared for XLNet’s transformer architecture.
 
 ## Results
 
@@ -98,13 +108,19 @@ This project undertakes a detailed comparison of six advanced machine learning m
 - **BERT**: Precision: 0.97, Recall: 0.97, F1 Score: 0.97
 - **XLNet**: Precision: 0.95, Recall: 0.97, F1 Score: 0.96
 
+### Conclusion
+
+The analysis highlights the strengths and weaknesses of each model for NER and POS tagging tasks. BERT and XLNet demonstrate superior performance, particularly in handling complex language patterns. The CRF and BiLSTM+CRF models also perform well, indicating their robustness for sequence tagging tasks.
+
 ## Streamlit Application
+
+The application demonstrates the functionality of NER and POS tagging models. Users can input text and receive tagged outputs based on pre-trained models. 
 
 Access the application here: [NER and POS Tagging App](https://huggingface.co/spaces/lokeshbalamurugan20/NamedEntityandPOS).
 
 ## Contributing
 
-Contributions are welcomed!!! Here’s how you can contribute:
+Contributions are welcomed! Here’s how you can contribute:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
