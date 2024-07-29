@@ -20,7 +20,7 @@ This project undertakes a detailed comparison of six advanced machine learning m
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/username/ner-pos-tagging.git
+    git clone https://github.com/Lokesh-Balamurugan/ner-pos-tagging.git
     cd ner-pos-tagging
     ```
 
@@ -100,7 +100,7 @@ This project undertakes a detailed comparison of six advanced machine learning m
 
 ## Streamlit Application
 
-Access the application here: [NER and POS Tagging App](https://huggingface.co/spaces/lokeshbalamurugan20/NERProject).
+Access the application here: [NER and POS Tagging App](https://huggingface.co/spaces/lokeshbalamurugan20/NamedEntityandPOS).
 
 ## Contributing
 
